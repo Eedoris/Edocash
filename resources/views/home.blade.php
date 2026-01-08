@@ -482,11 +482,55 @@
     @endif
 
 
+    <section class="blog-home">
+        <div class="containerblog">
+
+            <div class="blog-header">
+                <h2>Actualités & Blog</h2>
+                <a href="{{ route('blog.index') }}" class="see-all">
+                    Voir tous les articles →
+                </a>
+            </div>
+
+            <div class="blog-layout">
+
+                {{-- Article principal --}}
+                @if ($featuredPost)
+                    <div class="blog-featured">
+                        <img src="{{ asset('storage/' . $featuredPost->image) }}" alt="">
+                        <h3>{{ $featuredPost->title }}</h3>
+                        <p>{{ $featuredPost->excerpt }}</p>
+                        <a href="{{ route('blog.show', $featuredPost->slug) }}">
+                            Lire l’article
+                        </a>
+                    </div>
+                @endif
+
+                {{-- Articles secondaires --}}
+                <div class="blog-grid">
+                    @foreach ($latestPosts as $post)
+                        <article class="blog-card">
+                            <img src="{{ asset('storage/' . $post->image) }}" alt="">
+
+                            <div class="blog-card-content">
+                                <h4>{{ $post->title }}</h4>
+                                <p>{{ $post->excerpt }}</p>
+                                <a href="{{ route('blog.show', $post->slug) }}">Lire →</a>
+                            </div>
+                        </article>
+                    @endforeach
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
     <section class="faq-section">
 
         <div class="faq-bg-elements">
-            <div class="faq-circle circle-1"></div>
-            <div class="faq-circle circle-2"></div>
+            <div class="faq-circle circ-1"></div>
+            <div class="faq-circle circ-2"></div>
             <div class="faq-dots"></div>
         </div>
 
@@ -565,17 +609,20 @@
             <div class="faq-footer">
                 <div class="faq-stats">
                     <div class="stat-item">
-                        <span class="stat-number">{{ $faqs->count() }}</span>
+                        <span class="stat-number" data-value="{{ $faqs->count() }}">
+                            {{ $faqs->count() }}
+                        </span>
                         <span class="stat-label">Questions</span>
                     </div>
 
                     <div class="stat-item">
-                        <span class="stat-number">{{ $faqCategories->count() }}</span>
+                        <span class="stat-number" data-value="{{ $faqCategories->count() }}">
+                            {{ $faqCategories->count() }}
+                        </span>
                         <span class="stat-label">Catégories</span>
                     </div>
-
-
                 </div>
+
 
 
                 <div class="faq-actions">
@@ -603,49 +650,6 @@
         </div>
     </section>
 
-
-    <section class="blog-home">
-    <div class="containerblog">
-
-        <div class="blog-header">
-            <h2>Actualités & Blog</h2>
-            <a href="{{ route('blog.index') }}" class="see-all">
-                Voir tous les articles →
-            </a>
-        </div>
-
-        <div class="blog-layout">
-
-            {{-- Article principal --}}
-            @if ($featuredPost)
-                <div class="blog-featured">
-                    <img src="{{ asset('storage/' . $featuredPost->image) }}" alt="">
-                    <h3>{{ $featuredPost->title }}</h3>
-                    <p>{{ $featuredPost->excerpt }}</p>
-                    <a href="{{ route('blog.show', $featuredPost->slug) }}">
-                        Lire l’article
-                    </a>
-                </div>
-            @endif
-
-            {{-- Articles secondaires --}}
-            <div class="blog-grid">
-                @foreach ($latestPosts as $post)
-                    <article class="blog-card">
-                        <img src="{{ asset('storage/' . $post->image) }}" alt="">
-
-                        <div class="blog-card-content">
-                            <h4>{{ $post->title }}</h4>
-                            <p>{{ $post->excerpt }}</p>
-                            <a href="{{ route('blog.show', $post->slug) }}">Lire →</a>
-                        </div>
-                    </article>
-                @endforeach
-            </div>
-
-        </div>
-    </div>
-</section>
 
 
 

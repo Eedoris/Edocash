@@ -256,7 +256,7 @@
         </div>
     </div>
 
-    <!-- icon top -->
+   
     <button class="back-to-top" id="backToTop">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
             <path d="M12 20V4M12 4L5 11M12 4L19 11" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -275,7 +275,7 @@
 
 <style>
     .site-footer {
-        margin-top: 150px;
+        /*margin-top: 150px;*/
         background: linear-gradient(135deg, #00091A 0%, #0A1429 100%);
         color: white;
         position: relative;

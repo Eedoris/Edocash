@@ -64,7 +64,7 @@ const slideDuration = 5000;
 const minWidthForAutoSlide = 1130;
 
 function showItem(index) {
-  
+
   items.forEach(item => item.classList.remove('active'));
 
   currentIndex = index;
@@ -318,189 +318,186 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });*/
 
-document.addEventListener('DOMContentLoaded', function() {
-    // Elements
-    const faqItems = document.querySelectorAll('.faq-item');
-    const searchInput = document.getElementById('faqSearch');
-    const searchResults = document.getElementById('searchResults');
-    const categoryButtons = document.querySelectorAll('.category-btn');
-    const expandAllBtn = document.getElementById('expandAll');
-    
-    let allExpanded = false;
-    
-    // FAQ Accordion Functionality
+document.addEventListener('DOMContentLoaded', function () {
+
+  const faqItems = document.querySelectorAll('.faq-item');
+  const searchInput = document.getElementById('faqSearch');
+  const searchResults = document.getElementById('searchResults');
+  const categoryButtons = document.querySelectorAll('.category-btn');
+  const expandAllBtn = document.getElementById('expandAll');
+
+  let allExpanded = false;
+
+
+  faqItems.forEach(item => {
+    const questionBtn = item.querySelector('.faq-question');
+    const answer = item.querySelector('.faq-answer');
+
+    questionBtn.addEventListener('click', () => {
+      const isExpanded = questionBtn.getAttribute('aria-expanded') === 'true';
+
+
+      if (!isExpanded) {
+        faqItems.forEach(otherItem => {
+          if (otherItem !== item) {
+            otherItem.classList.remove('active');
+            otherItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+          }
+        });
+      }
+
+
+      item.classList.toggle('active');
+      questionBtn.setAttribute('aria-expanded', !isExpanded);
+
+
+      const icon = questionBtn.querySelector('.faq-icon svg');
+      icon.style.transition = 'transform 0.3s ease';
+
+
+      if (!isExpanded) {
+        const index = item.dataset.index;
+        console.log('FAQ viewed:', index);
+
+
+        questionBtn.style.backgroundColor = '#f8f9ff';
+        setTimeout(() => {
+          questionBtn.style.backgroundColor = '';
+        }, 300);
+      }
+    });
+  });
+
+  searchInput.addEventListener('input', function () {
+    const searchTerm = this.value.toLowerCase().trim();
+    searchResults.innerHTML = '';
+
+    if (searchTerm.length < 2) {
+      searchResults.style.display = 'none';
+      return;
+    }
+
+    const matchingItems = [];
+
     faqItems.forEach(item => {
-        const questionBtn = item.querySelector('.faq-question');
-        const answer = item.querySelector('.faq-answer');
-        
-        questionBtn.addEventListener('click', () => {
-            const isExpanded = questionBtn.getAttribute('aria-expanded') === 'true';
-            
-            // Close all other items
-            if (!isExpanded) {
-                faqItems.forEach(otherItem => {
-                    if (otherItem !== item) {
-                        otherItem.classList.remove('active');
-                        otherItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
-                    }
-                });
-            }
-            
-            // Toggle current item
-            item.classList.toggle('active');
-            questionBtn.setAttribute('aria-expanded', !isExpanded);
-            
-            // Add animation for icon
-            const icon = questionBtn.querySelector('.faq-icon svg');
-            icon.style.transition = 'transform 0.3s ease';
-            
-            // Track view (demo only)
-            if (!isExpanded) {
-                const index = item.dataset.index;
-                console.log('FAQ viewed:', index);
-                
-                // Animation effect
-                questionBtn.style.backgroundColor = '#f8f9ff';
-                setTimeout(() => {
-                    questionBtn.style.backgroundColor = '';
-                }, 300);
-            }
-        });
+      const question = item.querySelector('.question-text').textContent.toLowerCase();
+      const answer = item.querySelector('.answer-content').textContent.toLowerCase();
+
+      if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+        matchingItems.push(item);
+      }
     });
-    
-    // Search Functionality
-    searchInput.addEventListener('input', function() {
-        const searchTerm = this.value.toLowerCase().trim();
-        searchResults.innerHTML = '';
-        
-        if (searchTerm.length < 2) {
-            searchResults.style.display = 'none';
-            return;
-        }
-        
-        const matchingItems = [];
-        
-        faqItems.forEach(item => {
-            const question = item.querySelector('.question-text').textContent.toLowerCase();
-            const answer = item.querySelector('.answer-content').textContent.toLowerCase();
-            
-            if (question.includes(searchTerm) || answer.includes(searchTerm)) {
-                matchingItems.push(item);
-            }
+
+    if (matchingItems.length > 0) {
+      searchResults.style.display = 'block';
+
+      matchingItems.forEach(item => {
+        const questionText = item.querySelector('.question-text').textContent;
+        const resultItem = document.createElement('div');
+        resultItem.className = 'search-result-item';
+        resultItem.textContent = questionText;
+
+        resultItem.addEventListener('click', () => {
+          // Close all items
+          faqItems.forEach(faqItem => {
+            faqItem.classList.remove('active');
+            faqItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+          });
+
+
+          item.classList.add('active');
+          item.querySelector('.faq-question').setAttribute('aria-expanded', 'true');
+
+
+          item.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+          searchInput.value = '';
+          searchResults.style.display = 'none';
+
+          item.style.animation = 'none';
+          setTimeout(() => {
+            item.style.animation = 'highlight 1.5s ease';
+          }, 10);
         });
-        
-        if (matchingItems.length > 0) {
-            searchResults.style.display = 'block';
-            
-            matchingItems.forEach(item => {
-                const questionText = item.querySelector('.question-text').textContent;
-                const resultItem = document.createElement('div');
-                resultItem.className = 'search-result-item';
-                resultItem.textContent = questionText;
-                
-                resultItem.addEventListener('click', () => {
-                    // Close all items
-                    faqItems.forEach(faqItem => {
-                        faqItem.classList.remove('active');
-                        faqItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
-                    });
-                    
-                    // Open the selected item
-                    item.classList.add('active');
-                    item.querySelector('.faq-question').setAttribute('aria-expanded', 'true');
-                    
-                    // Scroll to item
-                    item.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    
-                    // Clear search
-                    searchInput.value = '';
-                    searchResults.style.display = 'none';
-                    
-                    // Highlight effect
-                    item.style.animation = 'none';
-                    setTimeout(() => {
-                        item.style.animation = 'highlight 1.5s ease';
-                    }, 10);
-                });
-                
-                searchResults.appendChild(resultItem);
-            });
+
+        searchResults.appendChild(resultItem);
+      });
+    } else {
+      searchResults.style.display = 'block';
+      const noResults = document.createElement('div');
+      noResults.className = 'search-result-item';
+      noResults.textContent = 'Aucun résultat trouvé';
+      noResults.style.color = '#999';
+      noResults.style.fontStyle = 'italic';
+      searchResults.appendChild(noResults);
+    }
+  });
+
+
+  categoryButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+
+      categoryButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const category = btn.dataset.category;
+
+
+      faqItems.forEach(item => {
+        if (category === 'all' || item.dataset.category === category) {
+          item.style.display = 'block';
+          setTimeout(() => {
+            item.style.opacity = '1';
+            item.style.transform = 'translateY(0)';
+          }, 10);
         } else {
-            searchResults.style.display = 'block';
-            const noResults = document.createElement('div');
-            noResults.className = 'search-result-item';
-            noResults.textContent = 'Aucun résultat trouvé';
-            noResults.style.color = '#999';
-            noResults.style.fontStyle = 'italic';
-            searchResults.appendChild(noResults);
+          item.style.opacity = '0';
+          item.style.transform = 'translateY(10px)';
+          setTimeout(() => {
+            item.style.display = 'none';
+          }, 300);
         }
+      });
     });
-    
-    // Category Filtering
-    categoryButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            // Update active button
-            categoryButtons.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            
-            const category = btn.dataset.category;
-            
-            // Filter items
-            faqItems.forEach(item => {
-                if (category === 'all' || item.dataset.category === category) {
-                    item.style.display = 'block';
-                    setTimeout(() => {
-                        item.style.opacity = '1';
-                        item.style.transform = 'translateY(0)';
-                    }, 10);
-                } else {
-                    item.style.opacity = '0';
-                    item.style.transform = 'translateY(10px)';
-                    setTimeout(() => {
-                        item.style.display = 'none';
-                    }, 300);
-                }
-            });
-        });
+  });
+
+
+  expandAllBtn.addEventListener('click', () => {
+    allExpanded = !allExpanded;
+
+    faqItems.forEach(item => {
+      const questionBtn = item.querySelector('.faq-question');
+
+      if (allExpanded) {
+        item.classList.add('active');
+        questionBtn.setAttribute('aria-expanded', 'true');
+      } else {
+        item.classList.remove('active');
+        questionBtn.setAttribute('aria-expanded', 'false');
+      }
     });
-    
-    // Expand/Collapse All
-    expandAllBtn.addEventListener('click', () => {
-        allExpanded = !allExpanded;
-        
-        faqItems.forEach(item => {
-            const questionBtn = item.querySelector('.faq-question');
-            
-            if (allExpanded) {
-                item.classList.add('active');
-                questionBtn.setAttribute('aria-expanded', 'true');
-            } else {
-                item.classList.remove('active');
-                questionBtn.setAttribute('aria-expanded', 'false');
-            }
-        });
-        
-        expandAllBtn.innerHTML = allExpanded 
-            ? `<svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+
+    expandAllBtn.innerHTML = allExpanded
+      ? `<svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                   <path d="M6 10H14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                </svg>
                Tout réduire`
-            : `<svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+      : `<svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                   <path d="M10 6V14M6 10H14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                </svg>
                Tout développer`;
-    });
-    
-    // Close search results when clicking outside
-    document.addEventListener('click', (e) => {
-        if (!e.target.closest('.faq-search')) {
-            searchResults.style.display = 'none';
-        }
-    });
-    
-    // Add highlight animation
-    const style = document.createElement('style');
-    style.textContent = `
+  });
+
+
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.faq-search')) {
+      searchResults.style.display = 'none';
+    }
+  });
+
+
+  const style = document.createElement('style');
+  style.textContent = `
         @keyframes highlight {
             0% { background-color: transparent; }
             10% { background-color: rgba(107, 78, 255, 0.1); }
@@ -511,5 +508,13 @@ document.addEventListener('DOMContentLoaded', function() {
             transition: opacity 0.3s ease, transform 0.3s ease;
         }
     `;
-    document.head.appendChild(style);
+  document.head.appendChild(style);
+
+  document.querySelectorAll('.stat-number').forEach(el => {
+    const value = el.dataset.value;
+    if (!isNaN(value)) {
+      el.textContent = value;
+    }
+  });
 });
+
