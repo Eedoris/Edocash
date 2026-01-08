@@ -2,15 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\BlogPost;
 use App\Models\Faq;
 use App\Models\FaqCategory;
 use App\Models\HomeHero;
+use App\Models\HomeAbout;
+use App\Models\HomeStats;
+use App\Models\HomeArtisan;
 use App\Models\Motif;
 use App\Models\Motivation;
 use App\Models\PressSection;
 use App\Models\Reason;
-use App\Models\BlogPost;
-
+use App\Models\Partners;
 
 class HomeController extends Controller
 {
@@ -55,8 +58,13 @@ class HomeController extends Controller
             ->latest('published_at')
             ->take(3)
             ->get();
-        //dd($faqCategories->count(), $faqs->count());
+        // dd($faqCategories->count(), $faqs->count());
 
-        return view('home', compact('hero','featuredPost','latestPosts', 'reasons', 'motif', 'motivation', 'press', 'faqs', 'faqCategories'));
+        $about = HomeAbout::first();
+        $artisans = HomeArtisan::where('is_active', true)->orderBy('order')->get();
+        $stats = HomeStats::orderBy('order')->get();
+        $partners = Partners::where('is_active', true)->orderBy('order')->get();
+
+        return view('home', compact('hero', 'featuredPost', 'latestPosts', 'reasons', 'motif', 'motivation', 'press', 'faqs', 'faqCategories','about','artisans','stats','partners'));
     }
 }
