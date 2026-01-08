@@ -1,0 +1,15 @@
+{{-- <section class="press-list">
+    <div class="container">
+        <h1>EdoCash dans les médias</h1>
+
+        <div class="press-grid">
+            @foreach ($articles as $article)
+                <a href="{{ route('press.show', $article->slug) }}" class="press-card">
+                    <h3>{{ $article->title }}</h3>
+                    <p>{{ $article->excerpt }}</p>
+                    <span>{{ $article->media_name }}</span>
+                </a>
+            @endforeach
+        </div>
+    </div>
+</section> --}}
