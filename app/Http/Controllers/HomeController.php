@@ -55,6 +55,7 @@ class HomeController extends Controller
             ->latest('published_at')
             ->take(3)
             ->get();
+        //dd($faqCategories->count(), $faqs->count());
 
         return view('home', compact('hero','featuredPost','latestPosts', 'reasons', 'motif', 'motivation', 'press', 'faqs', 'faqCategories'));
     }

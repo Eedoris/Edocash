@@ -1,992 +1,182 @@
-@extends('layouts.app')
-
-@section('content')
-    <!-- ... Votre contenu existant ... -->
-
-    <!-- SECTION FAQ STATIQUE -->
-    <section class="faq-section">
-        <!-- Background Elements -->
-        <div class="faq-bg-elements">
-            <div class="faq-circle circle-1"></div>
-            <div class="faq-circle circle-2"></div>
-            <div class="faq-dots"></div>
+on garde la partie suivante dans ce ordre et on separe le css du blade parce que apres je devrais faire des modifs etc 
+<div class="wwa-static-hero">
+            <div class="wwa-static-badge">Notre réseau</div>
+            <h2 class="wwa-static-title">
+                Plus qu'une application,<br>
+                <span class="wwa-static-highlight">une communauté d'artisans de confiance</span>
+            </h2>
+            <p class="wwa-static-intro">
+                EdoCash sélectionne rigoureusement chaque artisan pour vous garantir 
+                des interventions rapides, professionnelles et transparentes. 
+                Nous travaillons main dans la main avec des experts vérifiés.
+            </p>
+            
+            <div class="wwa-static-cta-wrapper">
+             
+                <a href="/nos-artisans" class="wwa-static-cta-secondary">
+                    qui sommes nous 
+                </a>
+            </div>
         </div>
+<div class="wwa-static-process">
 
-        <div class="container">
-            <!-- Section Header -->
-            <div class="faq-header">
-                <span class="faq-badge">FAQ</span>
-                <h2 class="faq-title">Questions fréquentes</h2>
-                <p class="faq-subtitle">Trouvez rapidement les réponses à vos questions sur EdoCash</p>
-                
-                <!-- Search Bar -->
-                <div class="faq-search">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                        <path d="M19 19L13 13M15 8C15 11.866 11.866 15 8 15C4.13401 15 1 11.866 1 8C1 4.13401 4.13401 1 8 1C11.866 1 15 4.13401 15 8Z" 
-                              stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                    </svg>
-                    <input type="text" 
-                           id="faqSearch" 
-                           placeholder="Rechercher une question..."
-                           class="faq-search-input">
-                    <div class="search-results" id="searchResults"></div>
-                </div>
+        <div class="wwa-static-artisans">
+            <div class="section-header-static">
+                <h3>Des artisans vérifiés près de chez vous</h3>
+                <p>Professionnels qualifiés avec expérience et excellentes évaluations</p>
             </div>
 
-            <!-- FAQ Categories -->
-            <div class="faq-categories">
-                <button class="category-btn active" data-category="all">Toutes</button>
-                <button class="category-btn" data-category="compte">Compte</button>
-                <button class="category-btn" data-category="paiements">Paiements</button>
-                <button class="category-btn" data-category="securite">Sécurité</button>
-                <button class="category-btn" data-category="frais">Frais</button>
-            </div>
-
-            <!-- FAQ Accordion -->
-            <div class="faq-accordion">
-                <!-- Question 1 -->
-                <div class="faq-item active" data-category="compte" data-index="0">
-                    <button class="faq-question" aria-expanded="true">
-                        <span class="question-text">Comment créer un compte EdoCash ?</span>
-                        <span class="faq-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" 
-                                      stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </span>
-                    </button>
-                    <div class="faq-answer" aria-hidden="false">
-                        <div class="answer-content">
-                            <p>Créer un compte EdoCash est simple et rapide :</p>
-                            <ol>
-                                <li>Téléchargez l'application depuis l'App Store ou Google Play</li>
-                                <li>Cliquez sur "Créer un compte"</li>
-                                <li>Renseignez votre numéro de téléphone et votre email</li>
-                                <li>Choisissez un mot de passe sécurisé</li>
-                                <li>Validez votre compte avec le code reçu par SMS</li>
-                            </ol>
-                            <p>Votre compte sera activé immédiatement après validation.</p>
-                            
-                            <div class="additional-info">
-                                <h4>Conseils :</h4>
-                                <ul>
-                                    <li>Utilisez un mot de passe fort (majuscules, minuscules, chiffres, caractères spéciaux)</li>
-                                    <li>Vérifiez que votre numéro est correct, il sert de recours en cas d'oubli de mot de passe</li>
-                                    <li>Activez l'authentification à deux facteurs pour plus de sécurité</li>
-                                </ul>
+            <div class="artisans-grid-static">
+                <!-- Artisan 1 -->
+                <div class="artisan-card-static" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+                    <div class="artisan-avatar-static" style="background: linear-gradient(135deg, #6B4EFF, #4FC3F7);">
+                        TP
+                    </div>
+                    <div class="artisan-content-static">
+                        <div class="artisan-header-static">
+                            <h4>Thomas P.</h4>
+                            <span class="artisan-badge-static">Plombier agréé</span>
+                        </div>
+                        
+                        <p class="artisan-desc-static">
+                            15 ans d'expérience, spécialiste en urgences et rénovation. 
+                            Intervient 24h/24 pour fuites et dépannages.
+                        </p>
+                        
+                        <div class="artisan-meta-static">
+                            <div class="meta-item-static">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M8 1L10.18 5.18L14 6L10.91 9.09L11.82 13L8 10.82L4.18 13L5.09 9.09L2 6L5.82 5.18L8 1Z" fill="#FFC107"></path>
+                                </svg>
+                                <span>4.9/5</span>
+                            </div>
+                            <div class="meta-item-static">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M8 14C11.3137 14 14 11.3137 14 8C14 4.68629 11.3137 2 8 2C4.68629 2 2 4.68629 2 8C2 11.3137 4.68629 14 8 14Z" stroke="#6B4EFF" stroke-width="1.5"></path>
+                                    <path d="M8 4V8L10.5 9.5" stroke="#6B4EFF" stroke-width="1.5" stroke-linecap="round"></path>
+                                </svg>
+                                <span>15 ans</span>
+                            </div>
+                            <div class="meta-item-static">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M5 8L7 10L11 6" stroke="#4FC3F7" stroke-width="1.5" stroke-linecap="round"></path>
+                                </svg>
+                                <span>Disponible</span>
                             </div>
                         </div>
                         
-                        <div class="faq-meta">
-                            <span class="faq-category-badge">Compte</span>
-                            <span class="faq-date">Mise à jour : il y a 2 jours</span>
+                        <div class="artisan-footer-static">
+                            <span class="location-static">
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                    <path d="M7 1.16666C4.422 1.16666 2.33333 3.25533 2.33333 5.83333C2.33333 8.75 7 12.8333 7 12.8333C7 12.8333 11.6667 8.75 11.6667 5.83333C11.6667 3.25533 9.578 1.16666 7 1.16666ZM7 7.58333C6.08033 7.58333 5.33333 6.83633 5.33333 5.91666C5.33333 4.99699 6.08033 4.25 7 4.25C7.91967 4.25 8.66667 4.99699 8.66667 5.91666C8.66667 6.83633 7.91967 7.58333 7 7.58333Z" fill="#666"></path>
+                                </svg>
+                                Paris 15ème
+                            </span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Question 2 -->
-                <div class="faq-item" data-category="paiements" data-index="1">
-                    <button class="faq-question" aria-expanded="false">
-                        <span class="question-text">Quels sont les délais de transfert d'argent ?</span>
-                        <span class="faq-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" 
-                                      stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </span>
-                    </button>
-                    <div class="faq-answer" aria-hidden="true">
-                        <div class="answer-content">
-                            <p>Les délais de transfert dépendent du type d'opération :</p>
-                            <ul>
-                                <li><strong>Transfert entre comptes EdoCash :</strong> Immédiat (quelques secondes)</li>
-                                <li><strong>Transfert vers une banque locale :</strong> 24 heures ouvrables</li>
-                                <li><strong>Transfert international :</strong> 2 à 3 jours ouvrables</li>
-                                <li><strong>Mobile Money :</strong> Instantané</li>
-                            </ul>
-                            <p>Les transferts sont accélérés les jours ouvrables entre 8h et 18h.</p>
+                <!-- Artisan 2 -->
+                <div class="artisan-card-static" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+                    <div class="artisan-avatar-static" style="background: linear-gradient(135deg, #4FC3F7, #6B4EFF);">
+                        ME
+                    </div>
+                    <div class="artisan-content-static">
+                        <div class="artisan-header-static">
+                            <h4>Marie E.</h4>
+                            <span class="artisan-badge-static">Électricienne</span>
                         </div>
                         
-                        <div class="faq-meta">
-                            <span class="faq-category-badge">Paiements</span>
-                            <span class="faq-date">Mise à jour : il y a 1 semaine</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Question 3 -->
-                <div class="faq-item" data-category="securite" data-index="2">
-                    <button class="faq-question" aria-expanded="false">
-                        <span class="question-text">EdoCash est-il sécurisé ?</span>
-                        <span class="faq-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" 
-                                      stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </span>
-                    </button>
-                    <div class="faq-answer" aria-hidden="true">
-                        <div class="answer-content">
-                            <p>Absolument ! EdoCash utilise les plus hauts standards de sécurité :</p>
-                            <ul>
-                                <li><strong>Cryptage AES-256 :</strong> Toutes les données sont cryptées</li>
-                                <li><strong>Double authentification :</strong> SMS + code PIN pour les transactions sensibles</li>
-                                <li><strong>Surveillance 24/7 :</strong> Détection automatique des activités suspectes</li>
-                                <li><strong>Conformité RGPD :</strong> Vos données sont protégées selon les normes européennes</li>
-                                <li><strong>Certification PCI DSS :</strong> Standard de sécurité pour les paiements</li>
-                            </ul>
-                            
-                            <div class="additional-info">
-                                <h4>Bonnes pratiques de sécurité :</h4>
-                                <ul>
-                                    <li>Ne partagez jamais vos codes d'accès</li>
-                                    <li>Activez les notifications de transaction</li>
-                                    <li>Utilisez notre fonction de verrouillage à distance en cas de perte de téléphone</li>
-                                </ul>
+                        <p class="artisan-desc-static">
+                            Électricienne diplômée, spécialisée dans les dépannages urgents. 
+                            Installation et réparation de tous types de circuits.
+                        </p>
+                        
+                        <div class="artisan-meta-static">
+                            <div class="meta-item-static">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M8 1L10.18 5.18L14 6L10.91 9.09L11.82 13L8 10.82L4.18 13L5.09 9.09L2 6L5.82 5.18L8 1Z" fill="#FFC107"></path>
+                                </svg>
+                                <span>4.8/5</span>
+                            </div>
+                            <div class="meta-item-static">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M8 14C11.3137 14 14 11.3137 14 8C14 4.68629 11.3137 2 8 2C4.68629 2 2 4.68629 2 8C2 11.3137 4.68629 14 8 14Z" stroke="#6B4EFF" stroke-width="1.5"></path>
+                                    <path d="M8 4V8L10.5 9.5" stroke="#6B4EFF" stroke-width="1.5" stroke-linecap="round"></path>
+                                </svg>
+                                <span>8 ans</span>
+                            </div>
+                            <div class="meta-item-static">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M5 8L7 10L11 6" stroke="#4FC3F7" stroke-width="1.5" stroke-linecap="round"></path>
+                                </svg>
+                                <span>Disponible</span>
                             </div>
                         </div>
                         
-                        <div class="faq-meta">
-                            <span class="faq-category-badge">Sécurité</span>
-                            <span class="faq-date">Mise à jour : il y a 3 jours</span>
+                        <div class="artisan-footer-static">
+                            <span class="location-static">
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                    <path d="M7 1.16666C4.422 1.16666 2.33333 3.25533 2.33333 5.83333C2.33333 8.75 7 12.8333 7 12.8333C7 12.8333 11.6667 8.75 11.6667 5.83333C11.6667 3.25533 9.578 1.16666 7 1.16666ZM7 7.58333C6.08033 7.58333 5.33333 6.83633 5.33333 5.91666C5.33333 4.99699 6.08033 4.25 7 4.25C7.91967 4.25 8.66667 4.99699 8.66667 5.91666C8.66667 6.83633 7.91967 7.58333 7 7.58333Z" fill="#666"></path>
+                                </svg>
+                                Lyon 3ème
+                            </span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Question 4 -->
-                <div class="faq-item" data-category="frais" data-index="3">
-                    <button class="faq-question" aria-expanded="false">
-                        <span class="question-text">Quels sont les frais sur EdoCash ?</span>
-                        <span class="faq-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" 
-                                      stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </span>
-                    </button>
-                    <div class="faq-answer" aria-hidden="true">
-                        <div class="answer-content">
-                            <p>EdoCash propose une transparence totale sur les frais :</p>
-                            <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
-                                <thead>
-                                    <tr style="background: #f8f9ff;">
-                                        <th style="padding: 12px; text-align: left; border-bottom: 2px solid #e0e0ff;">Type d'opération</th>
-                                        <th style="padding: 12px; text-align: left; border-bottom: 2px solid #e0e0ff;">Frais</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td style="padding: 10px; border-bottom: 1px solid #f0f0f0;">Création de compte</td>
-                                        <td style="padding: 10px; border-bottom: 1px solid #f0f0f0;">Gratuit</td>
-                                    </tr>
-                                    <tr>
-                                        <td style="padding: 10px; border-bottom: 1px solid #f0f0f0;">Transfert entre EdoCash</td>
-                                        <td style="padding: 10px; border-bottom: 1px solid #f0f0f0;">Gratuit</td>
-                                    </tr>
-                                    <tr>
-                                        <td style="padding: 10px; border-bottom: 1px solid #f0f0f0;">Transfert vers banque locale</td>
-                                        <td style="padding: 10px; border-bottom: 1px solid #f0f0f0;">1% (min. 100 FCFA)</td>
-                                    </tr>
-                                    <tr>
-                                        <td style="padding: 10px; border-bottom: 1px solid #f0f0f0;">Retrait Mobile Money</td>
-                                        <td style="padding: 10px; border-bottom: 1px solid #f0f0f0;">0,5%</td>
-                                    </tr>
-                                    <tr>
-                                        <td style="padding: 10px;">Transfert international</td>
-                                        <td style="padding: 10px;">2,5% + frais SWIFT</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <p><em>Note : Les frais sont toujours indiqués avant validation de la transaction.</em></p>
+                <!-- Artisan 3 -->
+                <div class="artisan-card-static" style="opacity: 1; transform: translateY(0px); transition: opacity 0.6s, transform 0.6s;">
+                    <div class="artisan-avatar-static" style="background: linear-gradient(135deg, #FF6B6B, #6B4EFF);">
+                        JS
+                    </div>
+                    <div class="artisan-content-static">
+                        <div class="artisan-header-static">
+                            <h4>Jean S.</h4>
+                            <span class="artisan-badge-static">Serrurier</span>
                         </div>
                         
-                        <div class="faq-meta">
-                            <span class="faq-category-badge">Frais</span>
-                            <span class="faq-date">Mise à jour : il y a 2 semaines</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Question 5 -->
-                <div class="faq-item" data-category="compte" data-index="4">
-                    <button class="faq-question" aria-expanded="false">
-                        <span class="question-text">Que faire en cas d'oubli de mot de passe ?</span>
-                        <span class="faq-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" 
-                                      stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </span>
-                    </button>
-                    <div class="faq-answer" aria-hidden="true">
-                        <div class="answer-content">
-                            <p>Si vous avez oublié votre mot de passe :</p>
-                            <ol>
-                                <li>Cliquez sur "Mot de passe oublié" sur l'écran de connexion</li>
-                                <li>Entrez votre numéro de téléphone ou votre email</li>
-                                <li>Vous recevrez un code de réinitialisation par SMS</li>
-                                <li>Entrez ce code et créez un nouveau mot de passe</li>
-                                <li>Connectez-vous avec vos nouvelles informations</li>
-                            </ol>
-                            
-                            <div class="additional-info">
-                                <h4>Important :</h4>
-                                <ul>
-                                    <li>Le code de réinitialisation est valable 15 minutes</li>
-                                    <li>Si vous ne recevez pas le SMS, vérifiez vos spams ou contactez notre support</li>
-                                    <li>Après 3 tentatives échouées, votre compte sera temporairement verrouillé</li>
-                                </ul>
+                        <p class="artisan-desc-static">
+                            Serrurier professionnel pour ouvertures de portes, 
+                            changements de serrures et systèmes de sécurité. 
+                            Intervention en moins de 30 minutes.
+                        </p>
+                        
+                        <div class="artisan-meta-static">
+                            <div class="meta-item-static">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M8 1L10.18 5.18L14 6L10.91 9.09L11.82 13L8 10.82L4.18 13L5.09 9.09L2 6L5.82 5.18L8 1Z" fill="#FFC107"></path>
+                                </svg>
+                                <span>4.7/5</span>
+                            </div>
+                            <div class="meta-item-static">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M8 14C11.3137 14 14 11.3137 14 8C14 4.68629 11.3137 2 8 2C4.68629 2 2 4.68629 2 8C2 11.3137 4.68629 14 8 14Z" stroke="#6B4EFF" stroke-width="1.5"></path>
+                                    <path d="M8 4V8L10.5 9.5" stroke="#6B4EFF" stroke-width="1.5" stroke-linecap="round"></path>
+                                </svg>
+                                <span>12 ans</span>
+                            </div>
+                            <div class="meta-item-static">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M5 8L7 10L11 6" stroke="#4FC3F7" stroke-width="1.5" stroke-linecap="round"></path>
+                                </svg>
+                                <span>Urgences 24h</span>
                             </div>
                         </div>
                         
-                        <div class="faq-meta">
-                            <span class="faq-category-badge">Compte</span>
-                            <span class="faq-date">Mise à jour : il y a 1 mois</span>
+                        <div class="artisan-footer-static">
+                            <span class="location-static">
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                    <path d="M7 1.16666C4.422 1.16666 2.33333 3.25533 2.33333 5.83333C2.33333 8.75 7 12.8333 7 12.8333C7 12.8333 11.6667 8.75 11.6667 5.83333C11.6667 3.25533 9.578 1.16666 7 1.16666ZM7 7.58333C6.08033 7.58333 5.33333 6.83633 5.33333 5.91666C5.33333 4.99699 6.08033 4.25 7 4.25C7.91967 4.25 8.66667 4.99699 8.66667 5.91666C8.66667 6.83633 7.91967 7.58333 7 7.58333Z" fill="#666"></path>
+                                </svg>
+                                Marseille 8ème
+                            </span>
                         </div>
                     </div>
-                </div>
-
-                <!-- Question 6 -->
-                <div class="faq-item" data-category="paiements" data-index="5">
-                    <button class="faq-question" aria-expanded="false">
-                        <span class="question-text">Puis-je annuler une transaction ?</span>
-                        <span class="faq-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" 
-                                      stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </span>
-                    </button>
-                    <div class="faq-answer" aria-hidden="true">
-                        <div class="answer-content">
-                            <p>L'annulation d'une transaction dépend de son statut :</p>
-                            <ul>
-                                <li><strong>Transaction en attente :</strong> Annulation possible directement depuis l'application</li>
-                                <li><strong>Transaction en cours :</strong> Contactez notre support dans les 30 minutes</li>
-                                <li><strong>Transaction terminée :</strong> Non annulable, vous pouvez demander un remboursement au bénéficiaire</li>
-                                <li><strong>Transaction frauduleuse :</strong> Signalez immédiatement à notre équipe de sécurité</li>
-                            </ul>
-                            
-                            <p><strong>Procédure d'annulation :</strong></p>
-                            <ol>
-                                <li>Allez dans "Historique des transactions"</li>
-                                <li>Sélectionnez la transaction concernée</li>
-                                <li>Cliquez sur "Annuler" si disponible</li>
-                                <li>Si le bouton n'apparaît pas, contactez le support via le chat intégré</li>
-                            </ol>
-                        </div>
-                        
-                        <div class="faq-meta">
-                            <span class="faq-category-badge">Paiements</span>
-                            <span class="faq-date">Mise à jour : il y a 5 jours</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- FAQ Stats & Actions -->
-            <div class="faq-footer">
-                <div class="faq-stats">
-                    <div class="stat-item">
-                        <span class="stat-number">6</span>
-                        <span class="stat-label">Questions</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">4</span>
-                        <span class="stat-label">Catégories</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">1,247</span>
-                        <span class="stat-label">Consultations</span>
-                    </div>
-                </div>
-                
-                <div class="faq-actions">
-                    <button class="expand-all-btn" id="expandAll">
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                            <path d="M10 6V14M6 10H14" stroke="currentColor" stroke-width="2" 
-                                  stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                        Tout développer
-                    </button>
-                    
-                    <a href="#" class="contact-btn">
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                            <path d="M2.003 5.884L10 9.882L17.997 5.884C17.967 5.374 17.744 4.895 17.372 4.545C17 4.195 16.508 4 16 4H4C3.492 4 3 4.195 2.628 4.545C2.256 4.895 2.033 5.374 2.003 5.884Z" 
-                                  stroke="currentColor" stroke-width="1.5"/>
-                            <path d="M2 7V13C2 13.5304 2.21071 14.0391 2.58579 14.4142C2.96086 14.7893 3.46957 15 4 15H16C16.5304 15 17.0391 14.7893 17.4142 14.4142C17.7893 14.0391 18 13.5304 18 13V7L10 11L2 7Z" 
-                                  stroke="currentColor" stroke-width="1.5"/>
-                        </svg>
-                        Une autre question ?
-                    </a>
                 </div>
             </div>
         </div>
-    </section>
+<div class="wwa-static-stats">
+ <div class="wwa-static-partners">
 
-    <!-- ... Votre footer existant ... -->
-@endsection
 
-<style>
-/* ===== FAQ SECTION ===== */
-.faq-section {
-    background: linear-gradient(135deg, #f8f9ff 0%, #eef0ff 100%);
-    padding: 100px 0;
-    position: relative;
-    overflow: hidden;
-}
-
-/* Background Elements */
-.faq-bg-elements {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-}
-
-.faq-circle {
-    position: absolute;
-    border-radius: 50%;
-    background: linear-gradient(135deg, rgba(107, 78, 255, 0.1), rgba(79, 195, 247, 0.05));
-    filter: blur(60px);
-}
-
-.circle-1 {
-    width: 400px;
-    height: 400px;
-    top: -200px;
-    right: -100px;
-    animation: float-faq 25s ease-in-out infinite;
-}
-
-.circle-2 {
-    width: 300px;
-    height: 300px;
-    bottom: -150px;
-    left: -100px;
-    animation: float-faq 30s ease-in-out infinite reverse;
-}
-
-.faq-dots {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-image: radial-gradient(rgba(107, 78, 255, 0.1) 1px, transparent 1px);
-    background-size: 30px 30px;
-    opacity: 0.3;
-}
-
-@keyframes float-faq {
-    0%, 100% { transform: translate(0, 0) rotate(0deg); }
-    33% { transform: translate(30px, -20px) rotate(120deg); }
-    66% { transform: translate(-20px, 30px) rotate(240deg); }
-}
-
-/* FAQ Header */
-.faq-header {
-    text-align: center;
-    margin-bottom: 60px;
-    position: relative;
-    z-index: 1;
-}
-
-.faq-badge {
-    display: inline-block;
-    background: linear-gradient(135deg, #6B4EFF, #4FC3F7);
-    color: white;
-    padding: 8px 20px;
-    border-radius: 20px;
-    font-size: 14px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-}
-
-.faq-title {
-    font-size: 48px;
-    color: #00091A;
-    margin-bottom: 15px;
-    font-weight: 800;
-    line-height: 1.2;
-}
-
-.faq-subtitle {
-    font-size: 18px;
-    color: #666;
-    max-width: 600px;
-    margin: 0 auto 40px;
-    line-height: 1.6;
-}
-
-@media (max-width: 768px) {
-    .faq-title {
-        font-size: 36px;
-    }
-    
-    .faq-subtitle {
-        font-size: 16px;
-    }
-}
-
-/* Search Bar */
-.faq-search {
-    position: relative;
-    max-width: 500px;
-    margin: 0 auto;
-}
-
-.faq-search-input {
-    width: 100%;
-    padding: 18px 50px 18px 20px;
-    background: white;
-    border: 2px solid #e0e0ff;
-    border-radius: 15px;
-    font-size: 16px;
-    color: #333;
-    box-shadow: 0 10px 30px rgba(107, 78, 255, 0.1);
-    transition: all 0.3s ease;
-}
-
-.faq-search-input:focus {
-    outline: none;
-    border-color: #6B4EFF;
-    box-shadow: 0 15px 40px rgba(107, 78, 255, 0.2);
-}
-
-.faq-search svg {
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #6B4EFF;
-}
-
-.search-results {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: white;
-    border-radius: 15px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-    margin-top: 10px;
-    max-height: 300px;
-    overflow-y: auto;
-    display: none;
-    z-index: 100;
-}
-
-.search-result-item {
-    padding: 15px 20px;
-    border-bottom: 1px solid #f0f0f0;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.search-result-item:hover {
-    background: #f8f9ff;
-    color: #6B4EFF;
-}
-
-.search-result-item:last-child {
-    border-bottom: none;
-}
-
-/* Categories */
-.faq-categories {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 40px;
-    position: relative;
-    z-index: 1;
-}
-
-.category-btn {
-    padding: 12px 24px;
-    background: white;
-    border: 2px solid #e0e0ff;
-    border-radius: 12px;
-    color: #666;
-    font-weight: 600;
-    font-size: 15px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.category-btn.active {
-    background: linear-gradient(135deg, #6B4EFF, #4FC3F7);
-    color: white;
-    border-color: transparent;
-    box-shadow: 0 10px 20px rgba(107, 78, 255, 0.2);
-}
-
-.category-btn:hover:not(.active) {
-    border-color: #6B4EFF;
-    color: #6B4EFF;
-    transform: translateY(-2px);
-}
-
-/* FAQ Accordion */
-.faq-accordion {
-    max-width: 900px;
-    margin: 0 auto 60px;
-    position: relative;
-    z-index: 1;
-}
-
-.faq-item {
-    background: white;
-    border-radius: 20px;
-    margin-bottom: 15px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    border: 2px solid transparent;
-    transition: all 0.3s ease;
-}
-
-.faq-item:hover {
-    border-color: #e0e0ff;
-    box-shadow: 0 15px 30px rgba(107, 78, 255, 0.1);
-}
-
-.faq-item.active {
-    border-color: #6B4EFF;
-    box-shadow: 0 20px 40px rgba(107, 78, 255, 0.15);
-}
-
-.faq-question {
-    width: 100%;
-    padding: 25px 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: none;
-    border: none;
-    text-align: left;
-    cursor: pointer;
-    font-size: 18px;
-    font-weight: 600;
-    color: #00091A;
-    transition: all 0.3s ease;
-}
-
-.faq-question:hover {
-    color: #6B4EFF;
-}
-
-.faq-question[aria-expanded="true"] {
-    color: #6B4EFF;
-    padding-bottom: 15px;
-}
-
-.faq-question[aria-expanded="true"] .faq-icon {
-    transform: rotate(180deg);
-}
-
-.question-text {
-    flex: 1;
-    padding-right: 20px;
-}
-
-.faq-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    background: #f8f9ff;
-    border-radius: 50%;
-    color: #6B4EFF;
-    transition: all 0.3s ease;
-    flex-shrink: 0;
-}
-
-.faq-question:hover .faq-icon {
-    background: #6B4EFF;
-    color: white;
-}
-
-.faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.faq-item.active .faq-answer {
-    max-height: 2000px;
-}
-
-.answer-content {
-    padding: 0 30px 25px;
-    color: #333;
-    line-height: 1.8;
-    font-size: 16px;
-}
-
-.answer-content p {
-    margin-bottom: 15px;
-}
-
-.answer-content ul, .answer-content ol {
-    padding-left: 20px;
-    margin-bottom: 20px;
-}
-
-.answer-content li {
-    margin-bottom: 8px;
-    position: relative;
-}
-
-.answer-content li::before {
-    content: '•';
-    color: #6B4EFF;
-    font-weight: bold;
-    margin-right: 10px;
-}
-
-.additional-info {
-    background: #f8f9ff;
-    padding: 20px;
-    border-radius: 12px;
-    margin-top: 20px;
-    border-left: 4px solid #6B4EFF;
-}
-
-.additional-info h4 {
-    color: #00091A;
-    margin-bottom: 10px;
-    font-size: 16px;
-    font-weight: 600;
-}
-
-/* FAQ Meta */
-.faq-meta {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 30px;
-    border-top: 1px solid #f0f0f0;
-    background: #fafbff;
-}
-
-.faq-category-badge {
-    padding: 6px 12px;
-    background: rgba(107, 78, 255, 0.1);
-    color: #6B4EFF;
-    border-radius: 8px;
-    font-size: 12px;
-    font-weight: 600;
-}
-
-.faq-date {
-    color: #999;
-    font-size: 14px;
-}
-
-/* FAQ Footer */
-.faq-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 30px;
-    margin-top: 60px;
-    position: relative;
-    z-index: 1;
-}
-
-.faq-stats {
-    display: flex;
-    gap: 40px;
-}
-
-.stat-item {
-    text-align: center;
-}
-
-.stat-number {
-    display: block;
-    font-size: 32px;
-    font-weight: 700;
-    color: #00091A;
-    line-height: 1;
-}
-
-.stat-label {
-    display: block;
-    color: #666;
-    font-size: 14px;
-    margin-top: 5px;
-}
-
-.faq-actions {
-    display: flex;
-    gap: 15px;
-}
-
-.expand-all-btn,
-.contact-btn {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 14px 28px;
-    border-radius: 12px;
-    font-weight: 600;
-    font-size: 15px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-decoration: none;
-}
-
-.expand-all-btn {
-    background: white;
-    border: 2px solid #e0e0ff;
-    color: #666;
-}
-
-.expand-all-btn:hover {
-    border-color: #6B4EFF;
-    color: #6B4EFF;
-    transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(107, 78, 255, 0.1);
-}
-
-.contact-btn {
-    background: linear-gradient(135deg, #6B4EFF, #4FC3F7);
-    color: white;
-    border: none;
-}
-
-.contact-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 15px 30px rgba(107, 78, 255, 0.3);
-}
-
-@media (max-width: 768px) {
-    .faq-footer {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .faq-stats {
-        gap: 30px;
-    }
-    
-    .stat-number {
-        font-size: 28px;
-    }
-    
-    .faq-actions {
-        flex-direction: column;
-        width: 100%;
-    }
-    
-    .expand-all-btn,
-    .contact-btn {
-        justify-content: center;
-    }
-}
-</style>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Elements
-    const faqItems = document.querySelectorAll('.faq-item');
-    const searchInput = document.getElementById('faqSearch');
-    const searchResults = document.getElementById('searchResults');
-    const categoryButtons = document.querySelectorAll('.category-btn');
-    const expandAllBtn = document.getElementById('expandAll');
-    
-    let allExpanded = false;
-    
-    // FAQ Accordion Functionality
-    faqItems.forEach(item => {
-        const questionBtn = item.querySelector('.faq-question');
-        const answer = item.querySelector('.faq-answer');
-        
-        questionBtn.addEventListener('click', () => {
-            const isExpanded = questionBtn.getAttribute('aria-expanded') === 'true';
-            
-            // Close all other items
-            if (!isExpanded) {
-                faqItems.forEach(otherItem => {
-                    if (otherItem !== item) {
-                        otherItem.classList.remove('active');
-                        otherItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
-                    }
-                });
-            }
-            
-            // Toggle current item
-            item.classList.toggle('active');
-            questionBtn.setAttribute('aria-expanded', !isExpanded);
-            
-            // Add animation for icon
-            const icon = questionBtn.querySelector('.faq-icon svg');
-            icon.style.transition = 'transform 0.3s ease';
-            
-            // Track view (demo only)
-            if (!isExpanded) {
-                const index = item.dataset.index;
-                console.log('FAQ viewed:', index);
-                
-                // Animation effect
-                questionBtn.style.backgroundColor = '#f8f9ff';
-                setTimeout(() => {
-                    questionBtn.style.backgroundColor = '';
-                }, 300);
-            }
-        });
-    });
-    
-    // Search Functionality
-    searchInput.addEventListener('input', function() {
-        const searchTerm = this.value.toLowerCase().trim();
-        searchResults.innerHTML = '';
-        
-        if (searchTerm.length < 2) {
-            searchResults.style.display = 'none';
-            return;
-        }
-        
-        const matchingItems = [];
-        
-        faqItems.forEach(item => {
-            const question = item.querySelector('.question-text').textContent.toLowerCase();
-            const answer = item.querySelector('.answer-content').textContent.toLowerCase();
-            
-            if (question.includes(searchTerm) || answer.includes(searchTerm)) {
-                matchingItems.push(item);
-            }
-        });
-        
-        if (matchingItems.length > 0) {
-            searchResults.style.display = 'block';
-            
-            matchingItems.forEach(item => {
-                const questionText = item.querySelector('.question-text').textContent;
-                const resultItem = document.createElement('div');
-                resultItem.className = 'search-result-item';
-                resultItem.textContent = questionText;
-                
-                resultItem.addEventListener('click', () => {
-                    // Close all items
-                    faqItems.forEach(faqItem => {
-                        faqItem.classList.remove('active');
-                        faqItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
-                    });
-                    
-                    // Open the selected item
-                    item.classList.add('active');
-                    item.querySelector('.faq-question').setAttribute('aria-expanded', 'true');
-                    
-                    // Scroll to item
-                    item.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    
-                    // Clear search
-                    searchInput.value = '';
-                    searchResults.style.display = 'none';
-                    
-                    // Highlight effect
-                    item.style.animation = 'none';
-                    setTimeout(() => {
-                        item.style.animation = 'highlight 1.5s ease';
-                    }, 10);
-                });
-                
-                searchResults.appendChild(resultItem);
-            });
-        } else {
-            searchResults.style.display = 'block';
-            const noResults = document.createElement('div');
-            noResults.className = 'search-result-item';
-            noResults.textContent = 'Aucun résultat trouvé';
-            noResults.style.color = '#999';
-            noResults.style.fontStyle = 'italic';
-            searchResults.appendChild(noResults);
-        }
-    });
-    
-    // Category Filtering
-    categoryButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            // Update active button
-            categoryButtons.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            
-            const category = btn.dataset.category;
-            
-            // Filter items
-            faqItems.forEach(item => {
-                if (category === 'all' || item.dataset.category === category) {
-                    item.style.display = 'block';
-                    setTimeout(() => {
-                        item.style.opacity = '1';
-                        item.style.transform = 'translateY(0)';
-                    }, 10);
-                } else {
-                    item.style.opacity = '0';
-                    item.style.transform = 'translateY(10px)';
-                    setTimeout(() => {
-                        item.style.display = 'none';
-                    }, 300);
-                }
-            });
-        });
-    });
-    
-    // Expand/Collapse All
-    expandAllBtn.addEventListener('click', () => {
-        allExpanded = !allExpanded;
-        
-        faqItems.forEach(item => {
-            const questionBtn = item.querySelector('.faq-question');
-            
-            if (allExpanded) {
-                item.classList.add('active');
-                questionBtn.setAttribute('aria-expanded', 'true');
-            } else {
-                item.classList.remove('active');
-                questionBtn.setAttribute('aria-expanded', 'false');
-            }
-        });
-        
-        expandAllBtn.innerHTML = allExpanded 
-            ? `<svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <path d="M6 10H14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-               </svg>
-               Tout réduire`
-            : `<svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <path d="M10 6V14M6 10H14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-               </svg>
-               Tout développer`;
-    });
-    
-    // Close search results when clicking outside
-    document.addEventListener('click', (e) => {
-        if (!e.target.closest('.faq-search')) {
-            searchResults.style.display = 'none';
-        }
-    });
-    
-    // Add highlight animation
-    const style = document.createElement('style');
-    style.textContent = `
-        @keyframes highlight {
-            0% { background-color: transparent; }
-            10% { background-color: rgba(107, 78, 255, 0.1); }
-            100% { background-color: transparent; }
-        }
-        
-        .faq-item {
-            transition: opacity 0.3s ease, transform 0.3s ease;
-        }
-    `;
-    document.head.appendChild(style);
-});
-</script>

@@ -525,6 +525,297 @@
         </div>
     </section>
 
+       
+<section class="who-we-are-static">
+    <!-- Éléments de fond décoratifs -->
+    <div class="wwa-static-bg">
+        <div class="wwa-static-dots"></div>
+        <div class="wwa-static-circle-1"></div>
+        <div class="wwa-static-circle-2"></div>
+    </div>
+
+    <div class="container">
+        <!-- Section 1: Présentation -->
+        <div class="wwa-static-hero">
+            <div class="wwa-static-badge">Notre réseau</div>
+            <h2 class="wwa-static-title">
+                Plus qu'une application,<br>
+                <span class="wwa-static-highlight">une communauté d'artisans de confiance</span>
+            </h2>
+            <p class="wwa-static-intro">
+                EdoCash sélectionne rigoureusement chaque artisan pour vous garantir 
+                des interventions rapides, professionnelles et transparentes. 
+                Nous travaillons main dans la main avec des experts vérifiés.
+            </p>
+            
+            <div class="wwa-static-cta-wrapper">
+                <a href="/qui-sommes-nous" class="wwa-static-cta-secondary">
+                    Qui sommes nous
+                </a>
+            </div>
+        </div>
+
+        <!-- Section 2: Nos Artisans -->
+        <div class="wwa-static-artisans">
+            <div class="section-header-static">
+                <h3>Des artisans vérifiés près de chez vous</h3>
+                <p>Professionnels qualifiés avec expérience et excellentes évaluations</p>
+            </div>
+
+            <div class="artisans-grid-static">
+                <!-- Artisan 1 -->
+                <div class="artisan-card-static">
+                    <div class="artisan-avatar-static" style="background: linear-gradient(135deg, #6B4EFF, #4FC3F7);">
+                        TP
+                    </div>
+                    <div class="artisan-content-static">
+                        <div class="artisan-header-static">
+                            <h4>Thomas P.</h4>
+                            <span class="artisan-badge-static">Plombier agréé</span>
+                        </div>
+                        
+                        <p class="artisan-desc-static">
+                            15 ans d'expérience, spécialiste en urgences et rénovation. 
+                            Intervient 24h/24 pour fuites et dépannages.
+                        </p>
+                        
+                        <div class="artisan-meta-static">
+                            <div class="meta-item-static">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M8 1L10.18 5.18L14 6L10.91 9.09L11.82 13L8 10.82L4.18 13L5.09 9.09L2 6L5.82 5.18L8 1Z" fill="#FFC107"/>
+                                </svg>
+                                <span>4.9/5</span>
+                            </div>
+                            <div class="meta-item-static">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M8 14C11.3137 14 14 11.3137 14 8C14 4.68629 11.3137 2 8 2C4.68629 2 2 4.68629 2 8C2 11.3137 4.68629 14 8 14Z" stroke="#6B4EFF" stroke-width="1.5"/>
+                                    <path d="M8 4V8L10.5 9.5" stroke="#6B4EFF" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                                <span>15 ans</span>
+                            </div>
+                            <div class="meta-item-static">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M5 8L7 10L11 6" stroke="#4FC3F7" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                                <span>Disponible</span>
+                            </div>
+                        </div>
+                        
+                        <div class="artisan-footer-static">
+                            <span class="location-static">
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                    <path d="M7 1.16666C4.422 1.16666 2.33333 3.25533 2.33333 5.83333C2.33333 8.75 7 12.8333 7 12.8333C7 12.8333 11.6667 8.75 11.6667 5.83333C11.6667 3.25533 9.578 1.16666 7 1.16666ZM7 7.58333C6.08033 7.58333 5.33333 6.83633 5.33333 5.91666C5.33333 4.99699 6.08033 4.25 7 4.25C7.91967 4.25 8.66667 4.99699 8.66667 5.91666C8.66667 6.83633 7.91967 7.58333 7 7.58333Z" fill="#666"/>
+                                </svg>
+                                Paris 15ème
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Artisan 2 -->
+                <div class="artisan-card-static">
+                    <div class="artisan-avatar-static" style="background: linear-gradient(135deg, #4FC3F7, #6B4EFF);">
+                        ME
+                    </div>
+                    <div class="artisan-content-static">
+                        <div class="artisan-header-static">
+                            <h4>Marie E.</h4>
+                            <span class="artisan-badge-static">Électricienne</span>
+                        </div>
+                        
+                        <p class="artisan-desc-static">
+                            Électricienne diplômée, spécialisée dans les dépannages urgents. 
+                            Installation et réparation de tous types de circuits.
+                        </p>
+                        
+                        <div class="artisan-meta-static">
+                            <div class="meta-item-static">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M8 1L10.18 5.18L14 6L10.91 9.09L11.82 13L8 10.82L4.18 13L5.09 9.09L2 6L5.82 5.18L8 1Z" fill="#FFC107"/>
+                                </svg>
+                                <span>4.8/5</span>
+                            </div>
+                            <div class="meta-item-static">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M8 14C11.3137 14 14 11.3137 14 8C14 4.68629 11.3137 2 8 2C4.68629 2 2 4.68629 2 8C2 11.3137 4.68629 14 8 14Z" stroke="#6B4EFF" stroke-width="1.5"/>
+                                    <path d="M8 4V8L10.5 9.5" stroke="#6B4EFF" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                                <span>8 ans</span>
+                            </div>
+                            <div class="meta-item-static">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M5 8L7 10L11 6" stroke="#4FC3F7" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                                <span>Disponible</span>
+                            </div>
+                        </div>
+                        
+                        <div class="artisan-footer-static">
+                            <span class="location-static">
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                    <path d="M7 1.16666C4.422 1.16666 2.33333 3.25533 2.33333 5.83333C2.33333 8.75 7 12.8333 7 12.8333C7 12.8333 11.6667 8.75 11.6667 5.83333C11.6667 3.25533 9.578 1.16666 7 1.16666ZM7 7.58333C6.08033 7.58333 5.33333 6.83633 5.33333 5.91666C5.33333 4.99699 6.08033 4.25 7 4.25C7.91967 4.25 8.66667 4.99699 8.66667 5.91666C8.66667 6.83633 7.91967 7.58333 7 7.58333Z" fill="#666"/>
+                                </svg>
+                                Lyon 3ème
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Artisan 3 -->
+                <div class="artisan-card-static">
+                    <div class="artisan-avatar-static" style="background: linear-gradient(135deg, #FF6B6B, #6B4EFF);">
+                        JS
+                    </div>
+                    <div class="artisan-content-static">
+                        <div class="artisan-header-static">
+                            <h4>Jean S.</h4>
+                            <span class="artisan-badge-static">Serrurier</span>
+                        </div>
+                        
+                        <p class="artisan-desc-static">
+                            Serrurier professionnel pour ouvertures de portes, 
+                            changements de serrures et systèmes de sécurité. 
+                            Intervention en moins de 30 minutes.
+                        </p>
+                        
+                        <div class="artisan-meta-static">
+                            <div class="meta-item-static">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M8 1L10.18 5.18L14 6L10.91 9.09L11.82 13L8 10.82L4.18 13L5.09 9.09L2 6L5.82 5.18L8 1Z" fill="#FFC107"/>
+                                </svg>
+                                <span>4.7/5</span>
+                            </div>
+                            <div class="meta-item-static">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M8 14C11.3137 14 14 11.3137 14 8C14 4.68629 11.3137 2 8 2C4.68629 2 2 4.68629 2 8C2 11.3137 4.68629 14 8 14Z" stroke="#6B4EFF" stroke-width="1.5"/>
+                                    <path d="M8 4V8L10.5 9.5" stroke="#6B4EFF" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                                <span>12 ans</span>
+                            </div>
+                            <div class="meta-item-static">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M5 8L7 10L11 6" stroke="#4FC3F7" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                                <span>Urgences 24h</span>
+                            </div>
+                        </div>
+                        
+                        <div class="artisan-footer-static">
+                            <span class="location-static">
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                    <path d="M7 1.16666C4.422 1.16666 2.33333 3.25533 2.33333 5.83333C2.33333 8.75 7 12.8333 7 12.8333C7 12.8333 11.6667 8.75 11.6667 5.83333C11.6667 3.25533 9.578 1.16666 7 1.16666ZM7 7.58333C6.08033 7.58333 5.33333 6.83633 5.33333 5.91666C5.33333 4.99699 6.08033 4.25 7 4.25C7.91967 4.25 8.66667 4.99699 8.66667 5.91666C8.66667 6.83633 7.91967 7.58333 7 7.58333Z" fill="#666"/>
+                                </svg>
+                                Marseille 8ème
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+
+        <!-- Section 3: Chiffres clés -->
+        <div class="wwa-static-stats">
+            <div class="stats-grid-static">
+                <div class="stat-item-static">
+                    <div class="stat-number-static">150+</div>
+                    <div class="stat-label-static">Artisans vérifiés</div>
+                </div>
+                <div class="stat-item-static">
+                    <div class="stat-number-static">5,000+</div>
+                    <div class="stat-label-static">Interventions réalisées</div>
+                </div>
+                <div class="stat-item-static">
+                    <div class="stat-number-static">98%</div>
+                    <div class="stat-label-static">Clients satisfaits</div>
+                </div>
+                <div class="stat-item-static">
+                    <div class="stat-number-static">24h/24</div>
+                    <div class="stat-label-static">Disponibilité</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 4: Nos Partenaires -->
+        <div class="wwa-static-partners">
+            <div class="section-header-static">
+                <h3>Ils nous font confiance</h3>
+                <p>Des partenaires de renom qui soutiennent notre démarche</p>
+            </div>
+
+            <div class="partners-grid-static">
+                <!-- Partenaire 1 -->
+                <div class="partner-card-static">
+                    <div class="partner-logo-static">
+                        <div class="logo-placeholder-static" style="background: #1A365D; color: white;">
+                            AXA
+                        </div>
+                    </div>
+                    <div class="partner-content-static">
+                        <h4>AXA Assurances</h4>
+                        <p class="partner-type-static">Partenaire assurance</p>
+                        <p class="partner-desc-static">
+                            Partenaire privilégié pour la gestion des sinistres 
+                            et interventions d'urgence.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Partenaire 2 -->
+                <div class="partner-card-static">
+                    <div class="partner-logo-static">
+                        <div class="logo-placeholder-static" style="background: #0052CC; color: white;">
+                            BN
+                        </div>
+                    </div>
+                    <div class="partner-content-static">
+                        <h4>Banque Nationale</h4>
+                        <p class="partner-type-static">Partenaire bancaire</p>
+                        <p class="partner-desc-static">
+                            Solution de paiement sécurisée et facilités 
+                            de financement pour nos clients.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Partenaire 3 -->
+                <div class="partner-card-static">
+                    <div class="partner-logo-static">
+                        <div class="logo-placeholder-static" style="background: #00A86B; color: white;">
+                            LM
+                        </div>
+                    </div>
+                    <div class="partner-content-static">
+                        <h4>Leroy Merlin</h4>
+                        <p class="partner-type-static">Partenaire fournisseur</p>
+                        <p class="partner-desc-static">
+                            Approvisionnement en matériel de qualité 
+                            pour toutes nos interventions.
+                        </p>
+                    </div>
+                </div>
+
+                
+                <div class="partner-card-static">
+                    <div class="partner-logo-static">
+                        <div class="logo-placeholder-static" style="background: #FF6B35; color: white;">
+                            SF
+                        </div>
+                    </div>
+                    <div class="partner-content-static">
+                        <h4>Service Foncier</h4>
+                        <p class="partner-type-static">Partenaire institutionnel</p>
+                        <p class="partner-desc-static">
+                            Collaboration pour les interventions 
+                            dans les copropriétés et bâtiments publics.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
     <section class="faq-section">
 
@@ -608,22 +899,20 @@
 
             <div class="faq-footer">
                 <div class="faq-stats">
-                    <div class="stat-item">
-                        <span class="stat-number" data-value="{{ $faqs->count() }}">
-                            {{ $faqs->count() }}
-                        </span>
-                        <span class="stat-label">Questions</span>
+                    <div class="faq-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">{{ $faqs->count() }}</span>
+                            <span class="stat-label">Questions</span>
+                        </div>
+
+                        <div class="stat-item">
+                            <span class="stat-number">{{ $faqCategories->count() }}</span>
+                            <span class="stat-label">Catégories</span>
+                        </div>
                     </div>
 
-                    <div class="stat-item">
-                        <span class="stat-number" data-value="{{ $faqCategories->count() }}">
-                            {{ $faqCategories->count() }}
-                        </span>
-                        <span class="stat-label">Catégories</span>
-                    </div>
+
                 </div>
-
-
 
                 <div class="faq-actions">
                     <button class="expand-all-btn" id="expandAll">
@@ -649,9 +938,43 @@
             </div>
         </div>
     </section>
+    
 
 
+<script>
 
+    document.addEventListener('DOMContentLoaded', function() {
+        
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
 
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        
+        document.querySelectorAll('.artisan-card-static').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+
+    
+        document.querySelectorAll('.partner-card-static').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+    });
+</script>
 
 @endsection

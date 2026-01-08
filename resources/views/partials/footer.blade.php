@@ -173,19 +173,19 @@
         <div class="container">
             <div class="stats-grid">
                 <div class="stat-item">
-                    <div class="stat-number" data-count="50">0</div>
+                    <div class="footer-stat-number" data-count="50">0</div>
                     <div class="stat-label">Pays</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number" data-count="500000">0</div>
+                    <div class="footer-stat-number" data-count="500000">0</div>
                     <div class="stat-label">Utilisateurs</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number" data-count="100">0</div>
+                    <div class="footer-stat-number" data-count="100">0</div>
                     <div class="stat-label">Partenaires</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number" data-count="99.9">0</div>
+                    <div class="footer-stat-number" data-count="99.9">0</div>
                     <div class="stat-label">% Uptime</div>
                 </div>
             </div>
@@ -748,7 +748,7 @@
         }
     }
 
-    .stat-number {
+    .footer-stat-number {
         font-size: 42px;
         font-weight: 700;
         background: linear-gradient(135deg, #6B4EFF, #4FC3F7);
@@ -924,7 +924,7 @@
     //statis
     document.addEventListener('DOMContentLoaded', function() {
      
-        const counters = document.querySelectorAll('.stat-number');
+        const counters = document.querySelectorAll('.footer-stat-number');
 
         const animateCounter = (counter) => {
             const target = parseInt(counter.getAttribute('data-count'));

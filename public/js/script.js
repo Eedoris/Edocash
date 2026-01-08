@@ -510,11 +510,5 @@ document.addEventListener('DOMContentLoaded', function () {
     `;
   document.head.appendChild(style);
 
-  document.querySelectorAll('.stat-number').forEach(el => {
-    const value = el.dataset.value;
-    if (!isNaN(value)) {
-      el.textContent = value;
-    }
-  });
 });
 
