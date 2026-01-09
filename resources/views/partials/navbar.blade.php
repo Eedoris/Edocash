@@ -9,7 +9,7 @@
 
 <header class="navbar">
     <button class="menu-btn" id="openMenu">☰</button>
-    <span class="logo">MonSite</span>
+    <span class="logo">EdoCash</span>
     
     <a href="{{ url('/admin/login') }}">Login</a>
 </header>
@@ -17,32 +17,49 @@
 
 <div class="menu-overlay" id="menu">
     <div class="menu-header">
-        <span class="menu-logo">MonSite</span>
+        <span class="menu-logo">EdoCash</span>
         <button class="close-btn" id="closeMenu">✕</button>
     </div>
 
-
     <div class="menu-content">
-        <div class="menu-column"> 
-            <h4>Nos services</h4>
-            <a href="#">Plomberie</a>
-            <a href="#">Électricité</a>
-            <a href="#">Serrurerie</a>
-        </div>
 
         <div class="menu-column">
+            <h4>Nos Blogs</h4>
+
+            @foreach ($navMetiers as $metier)
+                <div class="menu-metier">
+                    <a href="#}"
+                       class="menu-metier-title">
+                        {{ $metier->name }}
+                    </a>
+
+                    @if ($metier->blogPosts->count())
+                        <div class="menu-metier-blogs">
+                            @foreach ($metier->blogPosts as $post)
+                                <a href="{{ route('blog.show', $post->slug) }}"
+                                   class="menu-blog-link">
+                                    {{ Str::limit($post->title, 40) }}
+                                </a>
+                            @endforeach
+                        </div>
+                    @endif
+                </div>
+            @endforeach
+        </div>
+ 
+        <div class="menu-column">
             <h4>Mieux comprendre</h4>
-            <a href="#">Comment ça marche</a>
-            <a href="#">FAQ</a>
-            <a href="#">Tarifs</a>
+            <a href="{{ url('/#faq') }}">FAQ</a>
+
+            <a href="{{ route('blog.index') }}">Tous les articles</a>
         </div>
 
         <div class="menu-column">
             <h4>Nous connaître</h4>
-            <a href="#">À propos</a>
-            <a href="#">Contact</a>
-            <a href="#">Recrutement</a>
+            <a href="{{ route('about') }}">À propos</a>
         </div>
+
     </div>
 </div>
+</body>
 

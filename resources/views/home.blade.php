@@ -691,7 +691,7 @@
 
 
 
-    <section class="faq-section">
+    <section class="faq-section" id="faq">
 
         <div class="faq-bg-elements">
             <div class="faq-circle circ-1"></div>
