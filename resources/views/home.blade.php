@@ -26,9 +26,9 @@
                 </p>
 
                 <a href="{{ $hero->cta_link }}" class="btn-main">
-                    <img class="btn-main__image btn-main__image--bounce lazyautosizes ls-is-cached lazyloaded"
+                    {{--<img class="btn-main__image btn-main__image--bounce lazyautosizes ls-is-cached lazyloaded"
                         data-src="{{ asset('img/fleche.svg') }}" src="{{ asset('img/fleche.svg') }}" alt="icon flèche"
-                        sizes="30px">
+                        sizes="30px">--}}
                     {{ $hero->cta_text }}
                 </a>
 

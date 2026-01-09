@@ -62,9 +62,13 @@ class HomeController extends Controller
         // dd($faqCategories->count(), $faqs->count());
 
         $about = HomeAbout::first();
-        $artisans = HomeArtisan::where('is_active', true)->orderBy('order')->get();
+        $artisans = HomeArtisan::where('is_active', true)->orderBy('order') 
+        ->take(3)
+        ->get();
         $stats = HomeStats::orderBy('order')->get();
-        $partners = Partners::where('is_active', true)->orderBy('order')->get();
+        $partners = Partners::where('is_active', true)->orderBy('order')    
+        ->take(8)
+        ->get();
 
         return view('home', compact('hero', 'featuredPost', 'latestPosts', 'reasons', 'motif', 'motivation', 'press', 'faqs', 'faqCategories','about','artisans','stats','partners'));
     }

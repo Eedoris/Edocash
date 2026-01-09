@@ -35,19 +35,19 @@ class HomeAboutPage extends Page
             'highlight' => 'une communauté d\'artisans de confiance',
             'intro' => '',
             'cta_label' => 'Qui sommes-nous',
-            'cta_link' => '/qui-sommes-nous',
+            /*'cta_link' => '/qui-sommes-nous',*/
             'artisans' => [],
             'stats' => [],
             'partners' => [],
         ];
 
-        // Récupérer les données existantes
+       
         $record = HomeAbout::find(1);
         if ($record) {
             $defaultData = array_merge($defaultData, $record->toArray());
         }
 
-        // Récupérer les artisans
+        
         $artisans = HomeArtisan::orderBy('order')->get();
         if ($artisans->isNotEmpty()) {
             $defaultData['artisans'] = $artisans->map(function ($artisan) {
@@ -105,7 +105,7 @@ class HomeAboutPage extends Page
                     Forms\Components\TextInput::make('cta_label')
                     ->label('Texte du bouton')
                     ->default(route('about')),
-                    Forms\Components\TextInput::make('cta_link')->label('Lien du bouton'),
+                    /*Forms\Components\TextInput::make('cta_link')->label('Lien du bouton'),*/
                 ]),
 
             Forms\Components\Section::make('Artisans mis en avant')
@@ -165,7 +165,7 @@ class HomeAboutPage extends Page
    public function save(): void
 {
     try {
-        // 1. PRÉSENTATION
+       
         HomeAbout::updateOrCreate(
             ['id' => 1],
             [
@@ -178,7 +178,7 @@ class HomeAboutPage extends Page
             ]
         );
 
-        // 2. ARTISANS
+      
         HomeArtisan::truncate();
         foreach ($this->data['artisans'] ?? [] as $index => $artisanData) {
             if (empty($artisanData['name'])) {
@@ -204,7 +204,7 @@ class HomeAboutPage extends Page
             ]);
         }
 
-        // 3. STATS
+        
         HomeStats::truncate();
         foreach ($this->data['stats'] ?? [] as $index => $statData) {
             if (empty($statData['value']) || empty($statData['label'])) {
@@ -218,7 +218,7 @@ class HomeAboutPage extends Page
             ]);
         }
 
-        // 4. PARTENAIRES
+        
         Partners::truncate();
         foreach ($this->data['partners'] ?? [] as $index => $partnerData) {
             if (empty($partnerData['name'])) {

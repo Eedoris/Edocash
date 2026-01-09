@@ -97,7 +97,7 @@
                     <h3 class="footer-title">À Propos</h3>
                     <ul class="footer-links">
                         <li><a href="{{ route('press.index') }}" class="footer-link">Espace Presse</a></li>
-                        <li><a href="#" class="footer-link">Qui sommes nous ?</a></li>
+                        <li><a href="{{ route('about') }}" class="footer-link">Qui sommes nous ?</a></li>
                         <li><a href="{{ route('blog.index') }}" class="footer-link">Blog</a></li>
                         <li><a href="#" class="footer-link">Contact</a></li>
                     </ul>
