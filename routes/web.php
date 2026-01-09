@@ -9,6 +9,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PressController;
 use App\Http\Controllers\PostController;
 
+use App\Http\Controllers\AboutController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -32,4 +34,6 @@ Route::get('/presse/{slug}', [PressController::class, 'show'])->name('press.show
 Route::get('/blog', [PostController::class, 'index'])->name('blog.index');
 Route::get('/blog/{slug}', [PostController::class, 'show'])->name('blog.show');
 
-Route::get('/qui-sommes-nous', [AboutController::class, 'index'])->name('about');
+
+Route::get('/qui-sommes-nous', [AboutController::class, 'index'])
+    ->name('about');

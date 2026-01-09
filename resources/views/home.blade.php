@@ -1,6 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
+    @php
+        use Illuminate\Support\Str;
+    @endphp
+
     @if (isset($hero) && $hero)
         <section class="hero home"
             style="background-image: url('{{ !empty($hero->background_image) ? asset('storage/' . $hero->background_image) : asset('img/hero.png') }}');">
@@ -60,9 +64,9 @@
     @if (isset($reasons) && count($reasons) > 0)
         <section class="raisons">
             <div class="raison_head">
-                <h2 class="head2">
+                <h2 class="head2" data-aos="fade-up">
                     Face à l'imprévu <br>
-                    <span class="sub">un dépannage fiable</span>
+                    <span class="sub" data-aos="fade-up" data-aos-duration="1000">un dépannage fiable</span>
                 </h2>
             </div>
             <div class="part">
@@ -78,7 +82,7 @@
                             @endif
                         </div>
 
-                        <div class="list_description">
+                        <div class="list_description" data-aos="zoom-in-down">
                             <h3 class="list_title">{{ $reason->title }}</h3>
                             <p class="list_about">{{ $reason->description }}</p>
                         </div>
@@ -94,9 +98,9 @@
         <section class="motif">
             <div class=" motif_inner">
                 <div class="motif_head">
-                    <h2 class="head2"> {{ $motif->title }}
+                    <h2 class="head2" data-aos="fade-up"> {{ $motif->title }}
                         <br>
-                        <span class="sub">{{ $motif->subtitle }}</span>
+                        <span class="sub" data-aos="fade-up" data-aos-duration="1000">{{ $motif->subtitle }}</span>
                     </h2>
                 </div>
                 <div class="motif_block">
@@ -161,10 +165,10 @@
 
             <div class="container">
                 <div class="motiv-head">
-                    <h2 class="head2">
+                    <h2 class="head2" data-aos="fade-up">
                         {{ $motivation->title }}
                     </h2>
-                    <span class="sub">{{ $motivation->subtitle }}</span>
+                    <span class="sub" data-aos="fade-up" data-aos-duration="1000">{{ $motivation->subtitle }}</span>
                 </div>
 
                 <div class="motivations__slider-container">
@@ -176,7 +180,7 @@
                     <div class="motivations__slider" id="motivationsSlider">
                         @foreach ($motivation->items as $item)
                             <article class="motivation-card">
-                                <h3 class="motivation-card__title">
+                                <h3 class="motivation-card__title" data-aos="zoom-in">
                                     {{ $item->title }}
                                 </h3>
 
@@ -364,15 +368,16 @@
         </div>
     </section> --}}
     @if ($press)
-        <div class="container">
+        <div class="presscontainer">
             <div class="press-header">
                 <div class="press-title-wrapper">
-                    <h2 class="press-title">
+                    <h2 class="press-title" data-aos="fade-up">
                         {{ $press->title }}<br>
-                        <span class="press-subtitle">{{ $press->subtitle }}</span>
+                        <span class="press-subtitle" data-aos="fade-up"
+                            data-aos-duration="1000">{{ $press->subtitle }}</span>
                     </h2>
 
-                    <p class="press-intro">
+                    <p class="press-intro" data-aos="fade-up" data-aos-duration="2000">
                         {{ $press->intro }}
                     </p>
                 </div>
@@ -485,7 +490,7 @@
     <section class="blog-home">
         <div class="containerblog">
 
-            <div class="blog-header">
+            <div class="blog-header" data-aos="fade-up">
                 <h2>Actualités & Blog</h2>
                 <a href="{{ route('blog.index') }}" class="see-all">
                     Voir tous les articles →
@@ -496,7 +501,7 @@
 
                 {{-- Article principal --}}
                 @if ($featuredPost)
-                    <div class="blog-featured">
+                    <div class="blog-featured" data-aos="zoom-in">
                         <img src="{{ asset('storage/' . $featuredPost->image) }}" alt="">
                         <h3>{{ $featuredPost->title }}</h3>
                         <p>{{ $featuredPost->excerpt }}</p>
@@ -512,7 +517,7 @@
                         <article class="blog-card">
                             <img src="{{ asset('storage/' . $post->image) }}" alt="">
 
-                            <div class="blog-card-content">
+                            <div class="blog-card-content" data-aos="zoom-in">
                                 <h4>{{ $post->title }}</h4>
                                 <p>{{ $post->excerpt }}</p>
                                 <a href="{{ route('blog.show', $post->slug) }}">Lire →</a>
@@ -525,9 +530,8 @@
         </div>
     </section>
 
-
     <section class="who-we-are-static">
-        <!-- Éléments de fond décoratifs -->
+
         <div class="wwa-static-bg">
             <div class="wwa-static-dots"></div>
             <div class="wwa-static-circle-1"></div>
@@ -536,16 +540,14 @@
 
         <div class="container">
 
-            {{-- ===================== --}}
-            {{-- SECTION 1 : PRÉSENTATION --}}
-            {{-- ===================== --}}
+
             @if ($about)
                 <div class="wwa-static-hero">
                     @if ($about->badge)
                         <div class="wwa-static-badge">{{ $about->badge }}</div>
                     @endif
 
-                    <h2 class="wwa-static-title">
+                    <h2 class="wwa-static-title" data-aos="fade-up">
                         {!! nl2br(e($about->title)) !!}<br>
                         @if ($about->highlight)
                             <span class="wwa-static-highlight">{{ $about->highlight }}</span>
@@ -553,7 +555,7 @@
                     </h2>
 
                     @if ($about->intro)
-                        <p class="wwa-static-intro">
+                        <p class="wwa-static-intro" data-aos="fade-up">
                             {{ $about->intro }}
                         </p>
                     @endif
@@ -568,17 +570,15 @@
                 </div>
             @endif
 
-            {{-- ===================== --}}
-            {{-- SECTION 2 : ARTISANS --}}
-            {{-- ===================== --}}
+
             @if ($artisans->count())
                 <div class="wwa-static-artisans">
-                    <div class="section-header-static">
+                    <div class="section-header-static" data-aos="fade-up">
                         <h3>Des artisans vérifiés près de chez vous</h3>
                         <p>Professionnels qualifiés avec expérience et excellentes évaluations</p>
                     </div>
 
-                    <div class="artisans-grid-static">
+                    <div class="artisans-grid-static" data-aos="fade-up" data-aos-duration="1000">
                         @foreach ($artisans as $artisan)
                             <div class="artisan-card-static">
 
@@ -635,14 +635,12 @@
                 </div>
             @endif
 
-            {{-- ===================== --}}
-            {{-- SECTION 3 : STATISTIQUES --}}
-            {{-- ===================== --}}
+
             @if ($stats->count())
                 <div class="wwa-static-stats">
                     <div class="stats-grid-static">
                         @foreach ($stats as $stat)
-                            <div class="stat-item-static">
+                            <div class="stat-item-static" data-aos="zoom-in-down" data-aos-duration="2000">
                                 <div class="stat-number-static">{{ $stat->value }}</div>
                                 <div class="stat-label-static">{{ $stat->label }}</div>
                             </div>
@@ -651,9 +649,6 @@
                 </div>
             @endif
 
-            {{-- ===================== --}}
-            {{-- SECTION 4 : PARTENAIRES --}}
-            {{-- ===================== --}}
             @if ($partners->count())
                 <div class="wwa-static-partners">
                     <div class="section-header-static">
@@ -661,7 +656,7 @@
                         <p>Des partenaires de renom qui soutiennent notre démarche</p>
                     </div>
 
-                    <div class="partners-grid-static">
+                    <div class="partners-grid-static" data-aos="zoom-in-down" data-aos-duration="2000">
                         @foreach ($partners as $partner)
                             <div class="partner-card-static">
                                 <div class="partner-logo-static">
@@ -692,6 +687,8 @@
 
         </div>
     </section>
+
+
 
 
     <section class="faq-section">
@@ -737,7 +734,8 @@
             <div class="faq-accordion">
 
                 @foreach ($faqs as $index => $faq)
-                    <div class="faq-item" data-category="{{ $faq->category->slug }}" data-index="{{ $index }}">
+                    <div class="faq-item" data-category="{{ $faq->category->slug }}" data-index="{{ $index }}"
+                        data-aos="fade-right">
 
                         <button class="faq-question" aria-expanded="false">
                             <span class="question-text">
@@ -815,6 +813,7 @@
             </div>
         </div>
     </section>
+
 
 
 

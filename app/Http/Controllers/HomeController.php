@@ -8,12 +8,13 @@ use App\Models\FaqCategory;
 use App\Models\HomeHero;
 use App\Models\HomeAbout;
 use App\Models\HomeStats;
+use App\Models\Partners;
 use App\Models\HomeArtisan;
 use App\Models\Motif;
 use App\Models\Motivation;
 use App\Models\PressSection;
 use App\Models\Reason;
-use App\Models\Partners;
+
 
 class HomeController extends Controller
 {

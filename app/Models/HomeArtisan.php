@@ -18,6 +18,7 @@ class HomeArtisan extends Model
         'status',
         'order',
         'is_active',
+        'name'
     ];
 }
  

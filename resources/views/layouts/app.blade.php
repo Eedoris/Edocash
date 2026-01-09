@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
@@ -17,7 +18,7 @@
     @livewireScripts
 
     @include('partials.navbar')
-    
+
 
     <main>
         @yield('content')
@@ -26,6 +27,9 @@
     <script src="{{ asset('js/script.js') }}"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+   
 
     @isset($hero)
         <script>
@@ -48,7 +52,11 @@
         });
     </script> --}}
 
-@include('partials.footer')
+     <script>
+        AOS.init();
+    </script>
+    
+    @include('partials.footer')
 </body>
 
 </html>
